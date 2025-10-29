@@ -1,0 +1,138 @@
+body {
+  font-family: "Poppins", sans-serif;
+  color: #333;
+  padding-top: 80px;
+  background-color: #fff;
+  scroll-behavior: smooth;
+}
+
+/* NAVBAR */
+.navbar,
+.navbar a,
+.navbar-brand {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.navbar-nav .nav-link {
+  color: #333 !important;
+  transition: color 0.3s ease, transform 0.2s ease;
+  padding: 10px 15px;
+}
+.navbar-nav .nav-link:hover {
+  color: #0a5 !important;
+  transform: translateY(-2px);
+}
+
+/* Logo */
+.logo-nav {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+.logo-nav:hover { transform: scale(1.05); }
+
+/* Íconos redes sociales */
+.icono-red {
+  width: 28px;
+  height: 28px;
+  transition: transform 0.3s ease;
+}
+.icono-red:hover { transform: scale(1.1); }
+
+/* Botón personalizado */
+.btn-custom {
+  background-color: #0a5;
+  color: #fff;
+  border: none;
+  transition: 0.3s ease;
+}
+.btn-custom:hover {
+  background-color: #088;
+  color: #fff;
+}
+
+/* HERO */
+.hero-img {
+  background-image: url("images/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 350px;
+  border-radius: 8px;
+}
+
+/* Carrusel */
+.evento-img {
+  width: 100%;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+}
+
+/* ACERCA DE NOSOTROS */
+.acerca-img {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 300px;
+  border-radius: 8px;
+}
+
+/* PROYECTOS */
+.tarjeta-img {
+  background-color: #ccc;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 220px;
+  border-radius: 8px 8px 0 0;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .tarjeta-img {
+  transform: scale(1.05);
+}
+
+.card {
+  border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+/* CONTACTO */
+.contacto-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* FOOTER */
+.footer {
+  background-color: #222;
+  color: #fff;
+  font-size: 0.95rem;
+}
+.footer h5 {
+  color: #0a5;
+}
+.footer a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.footer a:hover {
+  color: #0a5;
+}
+.footer hr {
+  opacity: 0.2;
+}
+
