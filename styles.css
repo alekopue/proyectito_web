@@ -6,6 +6,8 @@ body {
   scroll-behavior: smooth;
 }
 
+/*NAV BAR GENERAL*/
+
 .navbar,
 .navbar a,
 .navbar-brand {
@@ -57,6 +59,8 @@ body {
   background-color: #088;
   color: #fff;
 }
+
+/*NAV BAR GENERAL*/
 
 .hero {
   display: flex;
@@ -285,6 +289,12 @@ body {
   object-fit: cover;
 }
 
+
+
+
+/*FOOTER GENERAL*/
+
+
 .footer {
   background-color: #222;
   color: #fff;
@@ -308,3 +318,6 @@ body {
 .footer hr {
   opacity: 0.2;
 }
+
+
+/*FOOTER GENERAL*/
