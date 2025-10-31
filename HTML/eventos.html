@@ -12,6 +12,11 @@
 
 <body>
 
+  <!-- =====================================================
+       NAVBAR (IDÉNTICO AL INDEX)
+       Conectado con CSS:
+       - .navbar, .navbar-nav .nav-link, .logo-nav, .icono-red
+       ===================================================== -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm fixed-top">
     <div class="container">
       <a class="navbar-brand" href="../index.html">
@@ -23,6 +28,7 @@
 
       <div class="collapse navbar-collapse justify-content-center" id="menuNav">
         <ul class="navbar-nav mx-auto text-center">
+          <!-- Notar que los enlaces van con ../ para subir un nivel de carpeta -->
           <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
           <li class="nav-item"><a class="nav-link" href="../HTML/eventos.html">Eventos</a></li>
           <li class="nav-item"><a class="nav-link" href="../HTML/proyectos.html">Proyectos</a></li>
@@ -37,18 +43,28 @@
           <a href="https://instagram.com" target="_blank">
             <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram" class="icono-red">
           </a>
-          <!--<a href="https://twitter.com" target="_blank">
-          <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" class="icono-red">
-        </a>-->
-
         </div>
       </div>
     </div>
   </nav>
 
+  <!-- =====================================================
+       SECCIÓN HERO (TEXTO + CARRUSEL)
+       Conectado con CSS:
+       - .hero: flexbox, align-items, gap
+       - #carouselExample: carrusel con imágenes
+       - .col-md-6: columnas responsive
+       ===================================================== -->
   <section class="hero">
+    <!-- 
+      COLUMNA DE TEXTO IZQUIERDA
+      col-md-6: ocupa 6 columnas en desktop
+      text-start: alinea texto a la izquierda
+    -->
     <div class="col-md-6 text-start">
+      <!-- Título principal de la página -->
       <h1 class="fw-bold mb-3">EVENTOS</h1>
+      <!-- Descripción de los servicios -->
       <p>En DyJ Eventos, transformamos tus ideas en momentos inolvidables. Nos especializamos en la organización
         integral de eventos sociales y corporativos, cuidando cada detalle: desde la ambientación y el sonido,
         hasta la coordinación y atención personalizada.
@@ -56,22 +72,50 @@
         cada celebración en una experiencia única, llena de estilo, creatividad y emoción.
       </p>
     </div>
+    
+    <!-- 
+      CARRUSEL DE EVENTOS
+      id="carouselExample": identificador único para Bootstrap
+      carousel slide: clases de Bootstrap para el carrusel
+      col-md-6: ocupa 6 columnas en desktop
+      Conectado con CSS: .hero #carouselExample (flex, border-radius, overflow, max-height)
+    -->
     <div id="carouselExample" class="carousel slide col-md-6">
+      <!-- Contenedor interior del carrusel -->
       <div class="carousel-inner">
+        <!-- 
+          PRIMER ELEMENTO DEL CARRUSEL (activo por defecto)
+          carousel-item active: elemento visible al cargar
+        -->
         <div class="carousel-item active">
+          <!-- Imagen responsive del carrusel -->
           <img src="../images/matrimonio.jpg" class="d-block w-100" alt="...">
         </div>
+        <!-- Segundo elemento -->
         <div class="carousel-item">
           <img src="../images/cumpleGianPiero.jpg" class="d-block w-100" alt="...">
         </div>
+        <!-- Tercer elemento -->
         <div class="carousel-item">
           <img src="../images/evento4.jpg" class="d-block w-100" alt="...">
         </div>
       </div>
+      
+      <!-- 
+        BOTÓN ANTERIOR DEL CARRUSEL
+        data-bs-target="#carouselExample": vincula al carrusel
+        data-bs-slide="prev": va hacia atrás
+      -->
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <!-- Texto para lectores de pantalla -->
         <span class="visually-hidden">Antes</span>
       </button>
+      
+      <!-- 
+        BOTÓN SIGUIENTE DEL CARRUSEL
+        data-bs-slide="next": va hacia adelante
+      -->
       <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Despues</span>
@@ -79,13 +123,39 @@
     </div>
   </section>
 
+  <!-- =====================================================
+       SECCIÓN DE EVENTOS DESTACADOS (3 TARJETAS)
+       Conectado con CSS:
+       - py-5 bg-light text-center: padding, fondo, alineación
+       - row g-4: grid con espaciado
+       - col-12 col-md-4: columnas responsive
+       - .card, .tarjeta-img: componentes personalizados
+       ===================================================== -->
   <section class="py-5 bg-light text-center">
     <div class="container">
+      <!-- Título de la sección -->
       <h2 class="mb-4">Eventos Pasados</h2>
+      <!-- 
+        GRID DE 3 COLUMNAS
+        row: fila de Bootstrap
+        g-4: gap de espaciado
+      -->
       <div class="row g-4">
+        
+        <!-- 
+          TARJETA 1 - QUINCEAÑERO
+          col-12 col-md-4: 12 columnas en móvil, 4 en desktop
+          h-100: altura completa para uniformidad
+        -->
         <div class="col-12 col-md-4">
           <div class="card h-100 shadow-sm">
+            <!-- 
+              IMAGEN DE LA TARJETA
+              .tarjeta-img: clase personalizada en CSS
+              style con background-image: establece imagen de fondo
+            -->
             <div class="tarjeta-img" style="background-image: url('../images/quince.jpg');"></div>
+            <!-- Cuerpo de la tarjeta con texto -->
             <div class="card-body">
               <h5 class="card-title">Quinciañero de Valeria</h5>
               <p class="card-text">Una noche mágica con temática elegante y tonos dorados, donde cada detalle —desde la
@@ -95,6 +165,10 @@
           </div>
         </div>
 
+        <!-- 
+          TARJETA 2 - EVENTO ESCOLAR
+          Misma estructura que tarjeta 1
+        -->
         <div class="col-12 col-md-4">
           <div class="card h-100 shadow-sm">
             <div class="tarjeta-img" style="background-image: url('../images/Promocion.jpg');"></div>
@@ -107,6 +181,10 @@
           </div>
         </div>
 
+        <!-- 
+          TARJETA 3 - CUMPLEAÑOS
+          Misma estructura que tarjetas anteriores
+        -->
         <div class="col-12 col-md-4">
           <div class="card h-100 shadow-sm">
             <div class="tarjeta-img" style="background-image: url('../images/cumpleGianPiero.jpg');"></div>
@@ -122,14 +200,32 @@
     </div>
   </section>
 
+  <!-- =====================================================
+       SECCIÓN DE TIPOS DE EVENTOS
+       Conectado con CSS:
+       - .tipos-eventos: padding y estilos generales
+       - .quinciañero, .matrimonio, .cumpleaño: flexbox con direcciones diferentes
+       - .texto, img: alineación y tamaños
+       ===================================================== -->
   <section class="tipos-eventos">
+    <!-- Título de la sección -->
     <h1>TIPOS DE EVENTOS</h1>
+    
+    <!-- 
+      PRIMERA SUBSECCIÓN - QUINCEAÑEROS
+      .quinciañero: flexbox con imagen a la derecha
+      Conectado con CSS: .quinciañero { flex-direction: row; }
+    -->
     <div class="quinciañero">
+      <!-- Contenedor del texto -->
       <div class="texto">
+        <!-- Título de la subsección -->
         <h2>Quinceañeros: Un día que marca tu historia</h2>
+        <!-- Descripción -->
         <p>En DyJ Eventos, hacemos de tus quince años una celebración mágica e inolvidable. Nos encargamos de
           que cada detalle refleje tu estilo, tu personalidad y el sueño que siempre imaginaste.
         </p>
+        <!-- Lista de características/servicios -->
         <ul>
           <li>Decoración personalizada con temática a elección (clásica, moderna o de fantasía).</li>
           <li>Coordinación completa de baile, entrada, momentos especiales y protocolo.</li>
@@ -137,42 +233,69 @@
           </li>
         </ul>
       </div>
+      <!-- Imagen de la subsección (lado derecho) -->
       <img src="../images/evento3.jpg" alt="quinceañero">
     </div>
 
+    <!-- 
+      SEGUNDA SUBSECCIÓN - MATRIMONIOS
+      .matrimonio: flexbox con imagen a la izquierda (row-reverse)
+      Conectado con CSS: .matrimonio { flex-direction: row-reverse; }
+    -->
     <div class="matrimonio">
+      <!-- Contenedor del texto -->
       <div class="texto">
+        <!-- Título -->
         <h2>Matrimonios: El inicio de una nueva historia</h2>
+        <!-- Descripción -->
         <p>En DyJ Eventos, convertimos el día más importante de tu vida en una experiencia inolvidable. Nuestro
           equipo cuida cada detalle para que tú y tu pareja solo se concentren en disfrutar y vivir el
           momento.
         </p>
+        <!-- Lista de servicios -->
         <ul>
           <li>Planeación y coordinación completa de ceremonia y recepción, adaptada a tu estilo.</li>
           <li>Ambientación, música e iluminación para crear el ambiente perfecto.</li>
           <li>Cobertura profesional en foto y video para inmortalizar cada emoción.</li>
         </ul>
       </div>
+      <!-- Imagen (lado izquierdo debido a row-reverse) -->
       <img src="../images/matrimonio.jpg" alt="matrimonio">
     </div>
 
+    <!-- 
+      TERCERA SUBSECCIÓN - CUMPLEAÑOS
+      .cumpleaño: flexbox con imagen a la derecha (como quinceañero)
+      Conectado con CSS: .cumpleaño { flex-direction: row; }
+    -->
     <div class="cumpleaño">
+      <!-- Contenedor del texto -->
       <div class="texto">
+        <!-- Título -->
         <h2>Cumpleaños: Celebra a lo grande</h2>
+        <!-- Descripción -->
         <p>En DyJ Eventos, transformamos cada cumpleaños en una fiesta única y llena de alegría. Nos encargamos
           de todos los detalles para que tú y tus invitados solo se dediquen a disfrutar.
         </p>
+        <!-- Lista de servicios -->
         <ul>
           <li>Decoración temática personalizada, según la edad y el estilo del festejado.</li>
           <li>Animación, música y entretenimiento para mantener la energía durante todo el evento.</li>
           <li>Organización integral de catering, fotografía y logística del día.</li>
         </ul>
       </div>
+      <!-- Imagen (lado derecho) -->
       <img src="../images/evento2.jpg" alt="cumpleaños">
     </div>
 
   </section>
 
+  <!-- =====================================================
+       FOOTER (IDÉNTICO AL INDEX)
+       Conectado con CSS:
+       - .footer: background-color, color, font-size
+       - .footer h5, .footer a: estilos personalizados
+       ===================================================== -->
   <footer class="footer bg-dark text-white pt-5 pb-3 mt-5">
     <div class="container text-center text-md-start">
       <div class="row">
@@ -181,7 +304,6 @@
           <h5 class="fw-bold">D&J Eventos</h5>
           <p>Creamos momentos inolvidables con estilo, dedicación y elegancia.</p>
         </div>
-
 
         <div class="col-md-4 mb-4">
           <h5 class="fw-bold">Contáctanos</h5>
@@ -192,7 +314,6 @@
           </ul>
         </div>
 
-
         <div class="col-md-4 mb-4 text-center text-md-end">
           <h5 class="fw-bold">Síguenos</h5>
           <div class="d-flex justify-content-center justify-content-md-end gap-3 mt-2">
@@ -202,9 +323,6 @@
             <a href="https://instagram.com" target="_blank">
               <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram" class="icono-red">
             </a>
-            <!--<a href="https://twitter.com" target="_blank">
-            <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter" class="icono-red">
-          </a>-->
           </div>
         </div>
       </div>
@@ -216,6 +334,7 @@
     </div>
   </footer>
 
+  <!-- Script de Bootstrap para funcionalidades interactivas -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
     </script>
