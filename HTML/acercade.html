@@ -1,46 +1,145 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <!-- Codificación de caracteres UTF-8 -->
   <meta charset="UTF-8">
+  <!-- Meta viewport para responsividad en dispositivos móviles -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Proyectos</title>
+  <!-- Título de la página que aparece en la pestaña del navegador -->
+  <title>Acerca de Nosotros</title>
+  
+  <!-- 
+    ENLACE A BOOTSTRAP 5.3.3
+    Bootstrap es un framework CSS que proporciona estilos predefinidos
+    Clases usadas: container, navbar, row, col-md-6, img-fluid, rounded, etc.
+  -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- 
+    FUENTE PLAYFAIR DISPLAY
+    Se usa para títulos y navbar (font-family: 'Playfair Display', serif)
+  -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+  
+  <!-- 
+    FUENTE POPPINS
+    Se usa como fuente principal del sitio (font-family: "Poppins", sans-serif)
+  -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- 
+    ENLACE A ARCHIVO CSS PERSONALIZADO
+    Aquí van todos los estilos personalizados del sitio
+  -->
   <link rel="stylesheet" href="../styles.css">
+
+  <!-- 
+    CSS PERSONALIZADO PARA LAS IMÁGENES
+    Estilos específicos para que las imágenes se vean bien
+  -->
+  <style>
+    /* 
+      ESTILOS DE IMAGEN
+      Imagen responsive que se adapta al contenedor
+    */
+    .imagen-seccion {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      display: block;
+    }
+
+    /* 
+      EFECTOS DE TRANSICIÓN EN LA IMAGEN
+      transition: hace un cambio suave cuando pasas el mouse
+    */
+    .imagen-seccion {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* 
+      EFECTO HOVER EN LA IMAGEN
+      transform: scale(1.03) agranda la imagen un 3% al pasar mouse
+      box-shadow: agrega una sombra más pronunciada
+    */
+    .imagen-seccion:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    /* 
+      RESPONSIVE DESIGN - TABLET
+      En pantallas menores a 992px
+    */
+    @media (max-width: 992px) {
+      /* Las imágenes se muestran abajo del texto */
+      .imagen-seccion {
+        margin-top: 1.5rem;
+      }
+    }
+
+    /* 
+      RESPONSIVE DESIGN - MÓVIL
+      En pantallas menores a 768px
+    */
+    @media (max-width: 768px) {
+      .imagen-seccion {
+        border-radius: 8px;
+        margin-top: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
   <!-- =====================================================
-       NAVBAR FIJA EN LA PARTE SUPERIOR
-       Conectado con CSS:
-       - .navbar: estilos generales y fixed-top
-       - .navbar-nav .nav-link: estilos de enlaces
-       - .logo-nav: imagen del logo
+       BARRA DE NAVEGACIÓN FIJA (NAVBAR)
+       Conectado con CSS personalizado:
+       - .navbar: estilos generales
+       - .logo-nav: imagen del logo con efectos
+       - .navbar-nav .nav-link: enlaces del menú
        - .icono-red: iconos de redes sociales
+       - fixed-top: fija la barra en la parte superior
        ===================================================== -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm fixed-top">
     <div class="container">
-      <!-- Logo de la marca que enlaza al home -->
+      <!-- 
+        LOGO DE LA MARCA
+        Enlaza a index.html (página principal)
+        Conectado con CSS: .logo-nav
+      -->
       <a class="navbar-brand" href="../index.html">
         <img src="../images/logo.png" alt="Logo" class="logo-nav">
       </a>
       
-      <!-- Botón hamburguesa para móvil (Bootstrap) -->
+      <!-- 
+        BOTÓN HAMBURGUESA PARA MÓVIL
+        data-bs-toggle="collapse": atributo de Bootstrap
+        data-bs-target="#menuNav": vincula al menú a ocultar/mostrar
+      -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <!-- Menú colapsable que se muestra/oculta en móvil -->
+      <!-- 
+        MENÚ COLAPSABLE
+        id="menuNav": identificador para que el botón hamburguesa lo controle
+        justify-content-center: centra el menú
+      -->
       <div class="collapse navbar-collapse justify-content-center" id="menuNav">
-        <!-- Lista de navegación centrada -->
+        <!-- 
+          LISTA DE NAVEGACIÓN
+          mx-auto: centra horizontalmente
+          text-center: centra el texto
+        -->
         <ul class="navbar-nav mx-auto text-center">
-          <!-- Cada elemento es un link a una sección del sitio -->
+          <!-- Cada elemento del menú es un nav-item con un nav-link -->
           <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
           <li class="nav-item"><a class="nav-link" href="../HTML/eventos.html">Eventos</a></li>
+          <li class="nav-item"><a class="nav-link" href="../HTML/proyectos.html">Proyectos</a></li>
           <!-- "active" indica que estamos en esta página -->
-          <li class="nav-item"><a class="nav-link active" href="../HTML/proyectos.html">Proyectos</a></li>
-          <li class="nav-item"><a class="nav-link" href="../HTML/acercade.html">Acerca de Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link active" href="../HTML/acercade.html">Acerca de Nosotros</a></li>
           <li class="nav-item"><a class="nav-link" href="../HTML/contactanos.html">Contáctanos</a></li>
         </ul>
 
@@ -50,7 +149,6 @@
           justify-content-center: centra en móvil
           justify-content-lg-end: alinea a la derecha en desktop
           gap-3: espacio entre iconos
-          mt-3 mt-lg-0: margen en móvil, sin margen en desktop
           Conectado con CSS: .icono-red (width, height, hover effects)
         -->
         <div class="d-flex justify-content-center justify-content-lg-end gap-3 mt-3 mt-lg-0">
@@ -73,7 +171,6 @@
        container: ancho máximo con padding
        py-5: padding vertical
        mt-5: margen superior (para que no se tape con navbar fija)
-       Conectado con CSS: container propiedades y py-5 (padding Bootstrap)
        ===================================================== -->
   <main class="container py-5 mt-5">
 
@@ -103,21 +200,28 @@
       </div>
       
       <!-- 
-        COLUMNA DE VIDEO/IMAGEN (derecha en desktop, abajo en móvil)
+        COLUMNA DE IMAGEN (derecha en desktop, abajo en móvil)
         col-md-6: ocupa 6 de 12 columnas
-        ratio ratio-16x9: proporciona relación de aspecto 16:9
-        bg-light: fondo gris claro
-        d-flex: usa flexbox
-        justify-content-center, align-items-center: centra el contenido
-        border: borde
-        rounded: esquinas redondeadas
+        
+        IMPORTANTE: Cambiar "images/evento1.jpg" por la ruta de tu imagen
+        
+        Las rutas pueden ser:
+        - Relativas: "../images/evento1.jpg" (si estás en carpeta HTML)
+        - Absolutas: "/images/evento1.jpg" (desde la raíz)
+        - URLs externas: "https://ejemplo.com/imagen.jpg"
       -->
       <div class="col-md-6">
-        <!-- Contenedor para video/imagen con relación 16:9 -->
-        <div class="ratio ratio-16x9 bg-light d-flex justify-content-center align-items-center border rounded">
-          <!-- Símbolo de play para indicar que es un video -->
-          <span class="fs-1 text-secondary">▶</span>
-        </div>
+        <!-- 
+          IMAGEN RESPONSIVE
+          src: ruta de la imagen (CAMBIAR SEGÚN TUS IMÁGENES)
+          alt: texto alternativo (describe la imagen)
+          class: estilos Bootstrap y personalizados
+          imagen-seccion: clase personalizada con hover effects
+        -->
+        <img 
+          src="../images/evento1.jpg" 
+          alt="Nuestra pasión en eventos" 
+          class="imagen-seccion">
       </div>
     </div>
 
@@ -125,6 +229,7 @@
          SEGUNDA SECCIÓN - HACEMOS REALIDAD TUS SUEÑOS
          Conectado con CSS: Igual a la sección anterior
          DIFERENCIA: flex-md-row-reverse invierte el orden en desktop
+         La imagen se muestra a la izquierda
          ===================================================== -->
     <div class="row align-items-center py-5 flex-md-row-reverse">
       <!-- 
@@ -144,21 +249,29 @@
       </div>
       
       <!-- 
-        COLUMNA DE VIDEO/IMAGEN (izquierda en desktop debido a row-reverse, abajo en móvil)
+        COLUMNA DE IMAGEN (izquierda en desktop debido a row-reverse, abajo en móvil)
         col-md-6: ocupa 6 columnas
+        
+        IMPORTANTE: Cambiar "images/evento2.jpg" por la ruta de tu imagen
       -->
       <div class="col-md-6">
-        <!-- Contenedor para video/imagen -->
-        <div class="ratio ratio-16x9 bg-light d-flex justify-content-center align-items-center border rounded">
-          <!-- Símbolo de play -->
-          <span class="fs-1 text-secondary">▶</span>
-        </div>
+        <!-- 
+          IMAGEN RESPONSIVE
+          Misma estructura que la imagen anterior
+          src: CAMBIAR por la ruta de tu segunda imagen
+          alt: descripción de esta imagen
+        -->
+        <img 
+          src="../images/evento2.jpg" 
+          alt="Realizando tus sueños en eventos" 
+          class="imagen-seccion">
       </div>
     </div>
 
     <!-- =====================================================
          TERCERA SECCIÓN - MÁS QUE EVENTOS, EXPERIENCIAS
          Conectado con CSS: Igual a la primera sección
+         La imagen se muestra a la derecha
          ===================================================== -->
     <div class="row align-items-center py-5">
       <!-- 
@@ -177,15 +290,21 @@
       </div>
       
       <!-- 
-        COLUMNA DE VIDEO/IMAGEN (derecha en desktop)
+        COLUMNA DE IMAGEN (derecha en desktop)
         col-md-6: ocupa 6 columnas
+        
+        IMPORTANTE: Cambiar "images/evento3.jpg" por la ruta de tu imagen
       -->
       <div class="col-md-6">
-        <!-- Contenedor para video/imagen -->
-        <div class="ratio ratio-16x9 bg-light d-flex justify-content-center align-items-center border rounded">
-          <!-- Símbolo de play -->
-          <span class="fs-1 text-secondary">▶</span>
-        </div>
+        <!-- 
+          IMAGEN RESPONSIVE
+          src: CAMBIAR por la ruta de tu tercera imagen
+          alt: descripción de esta imagen
+        -->
+        <img 
+          src="../images/evento3.jpg" 
+          alt="Experiencias inolvidables en eventos" 
+          class="imagen-seccion">
       </div>
     </div>
 
